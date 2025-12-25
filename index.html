@@ -1,0 +1,24 @@
+<div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+        <h2>Your Order</h2>
+        <button onclick="toggleCart()">×</button>
+    </div>
+    <div class="cart-body">
+        <p>Your cart is empty!</p>
+    </div>
+    <div class="cart-footer">
+        <button class="btn-checkout">Checkout - $0.00</button>
+    </div>
+</div>
+
+<script>
+    function toggleCart() {
+        const cart = document.getElementById('cartSidebar');
+        cart.classList.toggle('active');
+    }
+    
+    // Attach the function to your Order buttons
+    document.querySelectorAll('.btn-order, .btn-main').forEach(button => {
+        button.onclick = toggleCart;
+    });
+</script>
